@@ -2,7 +2,6 @@
 function preventChildImageContextMenu(e) {
     // class name of the element that contains the child image
     let childImageElementClassName = "card-img-top"; 
-    
     // take clicked html element
     let firstElementChild = e.target;
     

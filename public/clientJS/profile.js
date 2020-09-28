@@ -47,6 +47,7 @@ window.onload = function() {
             })
             .then(response => response.json())
             .then(data => {
+                // if there was an error on the backend do not append about me
                 if (data.error){
                     alert("Could not update about me. Check console for error details");
                     console.log(data);
