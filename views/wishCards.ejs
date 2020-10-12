@@ -70,7 +70,7 @@
                                         <!--The See More button needs another 'details' page but it will be implemented in a later version-->
 										<button type="button" class="wishcard-btn btn-grn-border"><a href="/wishcards/<%= wishcards[i]._id %>">See more</a></button>
                                         <button type="button"  data-toggle="modal" data-value-url="<%= wishcards[i].wishItemURL %>" data-value-name="<%= wishcards[i].childFirstName %>"
-                                        data-target="#wishCardDonateModal" class="wishcard-btn btn-grn-bg">Donate Gift</button>
+                                        data-value-wishCardId="<%= wishcards[i].wishCardImage %>" data-target="#wishCardDonateModal" class="wishcard-btn btn-grn-bg">Donate Gift</button>
 									</div>
 								</div>
 							</div>

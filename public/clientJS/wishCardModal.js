@@ -6,6 +6,7 @@ $('#wishCardDonateModal').on('show.bs.modal', function (event) {
     // extract values from button that contain child name / amazonlink
     let amazonUrl = button[0].dataset.valueUrl;
     let childName = button[0].dataset.valueName;
+    let wishCardId = button[0].dataset.wishCardId;
     let modalWarningMessage = ` Hello, before proceeding we want to make sure that you are certain that you want to donate. 
         Since we can not follow the donation process from amazon we trust that you will see the process to the end 
         and buy the selected for ${childName}. Once you click on the "Donate gift" button you  will be redirect to amazon and we will 
@@ -18,4 +19,13 @@ $('#wishCardDonateModal').on('show.bs.modal', function (event) {
     // set  redirect on a ref element
     let donationRedirect = document.getElementById("redirectAmazonUrl");
     donationRedirect.href = amazonUrl;
+    donationRedirect.setAttribute("data-wishCardId", wishCardId);
 });
+
+
+function onModalButtonClick(e) {
+    console.log(e);
+    let amazonUrl = e.children[0].dataset.wishCardid;
+    console.log("im a button inside the modal");
+    console.log(e.children[0].dataset);
+}
