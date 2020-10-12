@@ -8,10 +8,10 @@ $('#wishCardDonateModal').on('show.bs.modal', function (event) {
     let childName = button[0].dataset.valueName;
     let wishCardId = button[0].dataset.wishCardId;
     let modalWarningMessage = ` Hello, before proceeding we want to make sure that you are certain that you want to donate. 
-        Since we can not follow the donation process from amazon we trust that you will see the process to the end 
-        and buy the selected for ${childName}. Once you click on the "Donate gift" button you  will be redirect to amazon and we will 
-        inform ${childName} that the gift is on its way. If for some reason you are unable to place the order on amazon but you have clicked 
-        on donate gift button send us an email.
+        Since we can not follow the donation process from Amazon we trust that you will follow the process to the end 
+        and buy the selected item for ${childName}. Once you click on the "Donate gift" button you will be redirected to Amazon and we will 
+        inform ${childName} that the gift is on its way. If for some reason you are unable to place the order on Amazon but you have clicked 
+        on the donate gift button send us an email.
         Thank you very much :)`;
     // get modal reference and replace text
     modal = $(this);
@@ -19,13 +19,4 @@ $('#wishCardDonateModal').on('show.bs.modal', function (event) {
     // set  redirect on a ref element
     let donationRedirect = document.getElementById("redirectAmazonUrl");
     donationRedirect.href = amazonUrl;
-    donationRedirect.setAttribute("data-wishCardId", wishCardId);
 });
-
-
-function onModalButtonClick(e) {
-    console.log(e);
-    let amazonUrl = e.children[0].dataset.wishCardid;
-    console.log("im a button inside the modal");
-    console.log(e.children[0].dataset);
-}
